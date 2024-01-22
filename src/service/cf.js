@@ -391,7 +391,7 @@ function CFCombine(CFold, CFnew) {
 
 const sample = {
   c1: 0.5,
-  c2: 0,
+  c2: 0.4,
   c3: 0.7,
   c4: 0.6,
   c5: 0.7,
@@ -530,4 +530,92 @@ function hipotesisTwo(indicatorValue) {
   CFold = CFCombine(CFold, ruleTen);
   console.log(CFold);
 }
-hipotesisTwo(sample);
+
+function hipotesisThree(indicatorValue) {
+  const {
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c9,
+    c10,
+    c11,
+    c12,
+    c13,
+    c14,
+    c15,
+    c16,
+    c17,
+    c18,
+    c19,
+    c20,
+  } = indicatorValue;
+
+  const ruleEleven = eleventhRule(
+    c1,
+    c2,
+    c3,
+    c5,
+    c6,
+    c9,
+    c11,
+    c12,
+    c15,
+    1
+  );
+
+  const ruleTwelve = twelfthRule(c1, c2, c3, c5, c6, c9, 0.7);
+
+  const ruleThirteen = thirteenthRule(
+    c1,
+    c3,
+    c6,
+    c9,
+    c11,
+    c12,
+    c15,
+    0.8
+  );
+
+  const ruleFourteen = fourteenthRule(c1, c2, c3, c11, c15, 0.5);
+
+  const H03 = [ruleEleven, ruleTwelve, ruleThirteen, ruleFourteen];
+
+  let CFold = CFCombine(ruleEleven, ruleTwelve);
+
+  CFold = CFCombine(CFold, ruleThirteen);
+
+  CFold = CFCombine(CFold, ruleFourteen);
+
+  console.log(CFold);
+}
+
+function hipotesisFour(indicatorValue) {
+  const {
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c9,
+    c10,
+    c11,
+    c12,
+    c13,
+    c14,
+    c15,
+    c16,
+    c17,
+    c18,
+    c19,
+    c20,
+  } = indicatorValue;
+}
+hipotesisThree(sample);
