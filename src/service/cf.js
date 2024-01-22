@@ -383,3 +383,100 @@ function twentySeventhRule(c6, c10, c11, c17, crule) {
 
   return result;
 }
+function CFCombine(CFold, CFnew) {
+  const CFcombine = CFold + CFnew * (1 - CFold);
+
+  return CFcombine;
+}
+
+const sample = {
+  c1: 0.5,
+  c2: 0,
+  c3: 0.7,
+  c4: 0.6,
+  c5: 0.7,
+  c6: 0.6,
+  c7: 0.7,
+  c8: 0,
+  c9: 0,
+  c10: 0.7,
+  c11: 0.5,
+  c12: 0.7,
+  c13: 0,
+  c14: 0.8,
+  c15: 0.5,
+  c16: 0.4,
+  c17: 0.6,
+  c18: 0.6,
+  c19: 0.6,
+  c20: 0.8,
+};
+function hipotesisOne(indicatorValue) {
+  const {
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c9,
+    c10,
+    c11,
+    c12,
+    c13,
+    c14,
+    c15,
+    c16,
+    c17,
+    c18,
+    c19,
+    c20,
+  } = indicatorValue;
+  const ruleOne = firstRule(
+    c1,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c10,
+    c11,
+    c15,
+    c16,
+    1
+  );
+
+  const ruleTwo = secondRule(c1, c4, c5, c6, c7, 0.7);
+
+  const ruleThree = thirdRule(c1, c5, c6, c8, c10, c11, c15, 0.9);
+
+  const ruleFour = fourthRule(c1, c4, c7, c10, c11, c15, c16, 0.6);
+
+  const ruleFive = fifthRule(c1, c5, c8, c10, 0.5);
+
+  const ruleSix = sixthRule(c1, c5, c6, c8, c10, c11, c16, 0.8);
+
+  const H01 = [
+    ruleOne,
+    ruleTwo,
+    ruleThree,
+    ruleFour,
+    ruleFive,
+    ruleSix,
+  ];
+  let CFold = CFCombine(ruleOne, ruleTwo);
+
+  CFold = CFCombine(CFold, ruleThree);
+
+  CFold = CFCombine(CFold, ruleFour);
+
+  CFold = CFCombine(CFold, ruleFive);
+
+  CFold = CFCombine(CFold, ruleSix);
+
+  console.log('Hipotesa: ', CFold);
+}
+
+hipotesisOne(sample);
