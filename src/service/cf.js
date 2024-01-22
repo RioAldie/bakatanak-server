@@ -402,10 +402,10 @@ const sample = {
   c10: 0.7,
   c11: 0.5,
   c12: 0.7,
-  c13: 0,
+  c13: 0.6,
   c14: 0.8,
   c15: 0.5,
-  c16: 0.4,
+  c16: 0.7,
   c17: 0.6,
   c18: 0.6,
   c19: 0.6,
@@ -479,4 +479,55 @@ function hipotesisOne(indicatorValue) {
   console.log('Hipotesa: ', CFold);
 }
 
-hipotesisOne(sample);
+function hipotesisTwo(indicatorValue) {
+  const {
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c9,
+    c10,
+    c11,
+    c12,
+    c13,
+    c14,
+    c15,
+    c16,
+    c17,
+    c18,
+    c19,
+    c20,
+  } = indicatorValue;
+
+  const ruleSeven = seventhRule(
+    c1,
+    c4,
+    c5,
+    c6,
+    c7,
+    c10,
+    c11,
+    c14,
+    c16,
+    1
+  );
+
+  const ruleEight = eighthRule(c1, c4, c5, c6, c7, c13, 0.8);
+
+  const ruleNine = ninthRule(c1, c10, c11, c13, c16, 0.5);
+
+  const ruleTen = tenthRule(c1, c6, c7, c10, c11, c13, 0.7);
+
+  const H02 = [ruleSeven, ruleEight, ruleNine, ruleTen];
+
+  let CFold = CFCombine(ruleSeven, ruleEight);
+
+  CFold = CFCombine(CFold, ruleNine);
+  CFold = CFCombine(CFold, ruleTen);
+  console.log(CFold);
+}
+hipotesisTwo(sample);
