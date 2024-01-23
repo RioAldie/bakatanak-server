@@ -404,7 +404,7 @@ const sample = {
   c12: 0.7,
   c13: 0.6,
   c14: 0.8,
-  c15: 0.5,
+  c15: 0.4,
   c16: 0.7,
   c17: 0.6,
   c18: 0.6,
@@ -476,7 +476,7 @@ function hipotesisOne(indicatorValue) {
 
   CFold = CFCombine(CFold, ruleSix);
 
-  console.log('Hipotesa: ', CFold);
+  return CFold;
 }
 
 function hipotesisTwo(indicatorValue) {
@@ -528,7 +528,7 @@ function hipotesisTwo(indicatorValue) {
 
   CFold = CFCombine(CFold, ruleNine);
   CFold = CFCombine(CFold, ruleTen);
-  console.log(CFold);
+  return CFold;
 }
 
 function hipotesisThree(indicatorValue) {
@@ -591,7 +591,7 @@ function hipotesisThree(indicatorValue) {
 
   CFold = CFCombine(CFold, ruleFourteen);
 
-  console.log(CFold);
+  return CFold;
 }
 
 function hipotesisFour(indicatorValue) {
@@ -617,5 +617,180 @@ function hipotesisFour(indicatorValue) {
     c19,
     c20,
   } = indicatorValue;
+
+  const ruleFiveteen = fifteenthRule(c3, c5, c9, c12, c14, 1);
+
+  const ruleSixteen = sixteenthRule(c3, c5, c9, c12, 0.8);
+
+  const ruleSeventeen = seventeenthRule(c3, c5, c9, c14, 0, 7);
+
+  const ruleEighteen = eighteenthRule(c5, c9, c12, c14, 0.5);
+
+  const ruleNineteen = nineteenthRule(c3, c9, c12, c14, 0.9);
+
+  const H04 = [
+    ruleFiveteen,
+    ruleSixteen,
+    ruleSeventeen,
+    ruleEighteen,
+    ruleNineteen,
+  ];
+
+  let CFold = CFCombine(ruleFiveteen, ruleSixteen);
+
+  CFold = CFCombine(CFold, ruleSeventeen);
+
+  CFold = CFCombine(CFold, ruleEighteen);
+
+  CFold = CFCombine(CFold, ruleNineteen);
+
+  return CFold;
 }
-hipotesisThree(sample);
+
+function hipotesisFive(indicatorValue) {
+  const {
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c9,
+    c10,
+    c11,
+    c12,
+    c13,
+    c14,
+    c15,
+    c16,
+    c17,
+    c18,
+    c19,
+    c20,
+  } = indicatorValue;
+
+  const ruleTwenty = twentiethRule(
+    c1,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c11,
+    c15,
+    c16,
+    1
+  );
+
+  const ruleTwentyOne = twentyFirstRule(
+    c1,
+    c3,
+    c5,
+    c6,
+    c11,
+    c15,
+    c16,
+    0.7
+  );
+
+  const ruleTwentyTwo = twentySecondRule(
+    c1,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c11,
+    c16,
+    0.8
+  );
+
+  const ruleTwentyThree = twentyThirdRule(c1, c3, c6, 0.5);
+
+  const ruleTwentyFour = twentyFourthRule(c1, c3, c6, c15, c16, 0.8);
+
+  const H05 = [
+    ruleTwenty,
+    ruleTwentyOne,
+    ruleTwentyTwo,
+    ruleTwentyThree,
+    ruleTwentyFour,
+  ];
+
+  let CFold = CFCombine(ruleTwenty, ruleTwentyOne);
+
+  CFold = CFCombine(CFold, ruleTwentyTwo);
+
+  CFold = CFCombine(CFold, ruleTwentyThree);
+
+  CFold = CFCombine(CFold, ruleTwentyFour);
+
+  return CFold;
+}
+
+function hipotesisSix(indicatorValue) {
+  const {
+    c1,
+    c2,
+    c3,
+    c4,
+    c5,
+    c6,
+    c7,
+    c8,
+    c9,
+    c10,
+    c11,
+    c12,
+    c13,
+    c14,
+    c15,
+    c16,
+    c17,
+    c18,
+    c19,
+    c20,
+  } = indicatorValue;
+
+  const ruleTwentyFive = twentyFifthRule(
+    c10,
+    c11,
+    c17,
+    c18,
+    c19,
+    c20,
+    1
+  );
+
+  const ruleTwentySix = twentySixthRule(c10, c17, c18, c19, 0.8);
+
+  const ruleTwentySeven = twentySeventhRule(c6, c10, c11, c17, 0.6);
+
+  const H06 = [ruleTwentyFive, ruleTwentySix, ruleTwentySeven];
+
+  let CFold = CFCombine(ruleTwentyFive, ruleTwentySix);
+
+  CFold = CFCombine(CFold, ruleTwentySeven);
+
+  return CFold;
+}
+
+const CertaintyFactor = (indicator) => {
+  const H01 = hipotesisOne(indicator);
+  const H02 = hipotesisTwo(indicator);
+  const H03 = hipotesisThree(indicator);
+  const H04 = hipotesisFour(indicator);
+  const H05 = hipotesisFive(indicator);
+  const H06 = hipotesisSix(indicator);
+
+  const result = Math.max(H01, H02, H03, H04, H05, H06);
+
+  return result;
+};
+
+const result = CertaintyFactor(sample);
+
+console.log('Hasil Identifikasi: ', result);
