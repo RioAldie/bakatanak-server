@@ -794,3 +794,5 @@ const CertaintyFactor = (indicator) => {
 const result = CertaintyFactor(sample);
 
 console.log('Hasil Identifikasi: ', result);
+
+module.exports = { result, CertaintyFactor };
