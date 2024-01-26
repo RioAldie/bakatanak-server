@@ -1,0 +1,102 @@
+[
+  {
+    "code": "C01",
+    "name": "Mempunyai dorongan besar keingintauan",
+    "quiz": "Apakah anak anda memiliki dorongan keingintahuan yang kat?"
+  },
+  {
+    "code": "C02",
+    "name": "Mudah memahami irama agu",
+    "quiz": "Apakah anak anda mudah dalam memahami irama lgu?"
+  },
+  {
+    "code": "C03",
+    "name": "Suka berada di antara banyak oang",
+    "quiz": "Apakah anak suka berada diantara banyak orng?"
+  },
+  {
+    "code": "C04",
+    "name": "Suka membaca uku",
+    "quiz": "Apakah anak tertarik membaca bku?"
+  },
+  {
+    "code": "C05",
+    "name": "Berpikir Postif",
+    "quiz": "Apakah anak anda cenderung berpikir posiif?"
+  },
+  {
+    "code": "C06",
+    "name": "Suka menganaisa",
+    "quiz": "Apakah anak anda suka menganalsa?"
+  },
+  {
+    "code": "C07",
+    "name": "Suka menghitung angka/berhiung",
+    "quiz": "Apakah anak anda suka berhitung atau menghitung anka?"
+  },
+  {
+    "code": "C08",
+    "name": "Memberikan gagasan dalam penyelesaian maslah",
+    "quiz": "Apakah anak anda dapat memberikan gagasan dalam suatu penyelesaian masaah?"
+  },
+  {
+    "code": "C09",
+    "name": "Ketertarikan pada taian",
+    "quiz": "Apakah anak anda memiliki ketertarikan pada taran?"
+  },
+  {
+    "code": "C10",
+    "name": "Cermat dalam pengamtan",
+    "quiz": "Apakah anak anda cermat dalam mengamti?"
+  },
+  {
+    "code": "C11",
+    "name": "Berpikir krtis",
+    "quiz": "Apakah anak anda cenderung berpikir kriis?"
+  },
+  {
+    "code": "C12",
+    "name": "Suka meniru gerkan",
+    "quiz": "Apakah anak anda suka menirukan geraan?"
+  },
+  {
+    "code": "C13",
+    "name": "Tertarik mencoba hal aru",
+    "quiz": "Apakah anak anda tertarik dalam mencoba hal bru?"
+  },
+  {
+    "code": "C14",
+    "name": "Aktif dalam kegiatan fsik",
+    "quiz": "Apakah anak anda aktif dalam kegiatan fiik?"
+  },
+  {
+    "code": "C15",
+    "name": "Tertarik dalam bekerja atau belajar seorang iri",
+    "quiz": "Apakah anak anda tertarik bekerja atau belajar seorang dri?"
+  },
+  {
+    "code": "C16",
+    "name": "Suka melakukan peneliian",
+    "quiz": "Apakah anak anda tertarik meneliti sesutu?"
+  },
+  {
+    "code": "C17",
+    "name": "Kepercayaan iri",
+    "quiz": "Apakah anak anda memiliki kepercayaan dri?"
+  },
+  {
+    "code": "C18",
+    "name": "Bertanggung jwab",
+    "quiz": "Apakah anak anda dapat bertanggung jaab?"
+  },
+  {
+    "code": "C19",
+    "name": "Kecenderungan untuk mendomiasi",
+    "quiz": "Apakah anak anda memiliki kecenderungan untuk mendominsi?"
+  },
+  {
+    "code": "C20",
+    "name": "Kenginan untuk menghadapi reiko",
+    "quiz": "Apakah anak anda memiliki keinginan untuk menghadapi resko?"
+  }
+]
