@@ -1,0 +1,26 @@
+[
+  {
+    "code": "H01",
+    "name": "Bakat Akademik Khusus"
+  },
+  {
+    "code": "H02",
+    "name": "Bakat Kreatif dan Produktif"
+  },
+  {
+    "code": "H03",
+    "name": "Bakat Seni"
+  },
+  {
+    "code": "H04",
+    "name": "Bakat Kinestetik/Psikomotorik"
+  },
+  {
+    "code": "H05",
+    "name": "Bakat Sosial"
+  },
+  {
+    "code": "H06",
+    "name": "Bakat Kepemimpinan"
+  }
+]
