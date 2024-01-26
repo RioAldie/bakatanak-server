@@ -3,6 +3,7 @@ const {
   getTalentIdentification,
 } = require('../controllers/talent.controller');
 const indicatorRoute = require('./indicator.router');
+const userRoute = require('./user.router');
 
 const router = express();
 
@@ -12,5 +13,6 @@ router.get('/', (req, res) => {
 
 router.post('/', getTalentIdentification);
 router.use('/indicator', indicatorRoute);
+router.use('/user', userRoute);
 
 module.exports = router;
