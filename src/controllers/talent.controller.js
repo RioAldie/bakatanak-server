@@ -38,4 +38,20 @@ const saveConsultResult = async (req, res) => {
   }
 };
 
-module.exports = { getTalentIdentification, saveConsultResult };
+const deleteConsultationResult = async (req, res) => {
+  try {
+    const { resultId } = req.body;
+
+    await Consult.findByIdAndDelete({ _id: resultId });
+
+    return res.status(200).json({ message: 'Delete Success' });
+  } catch (error) {
+    res.status(500).json({ message: 'error' });
+  }
+};
+
+module.exports = {
+  getTalentIdentification,
+  saveConsultResult,
+  deleteConsultationResult,
+};
