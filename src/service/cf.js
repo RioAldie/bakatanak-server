@@ -786,13 +786,56 @@ const CertaintyFactor = (indicator) => {
   const H05 = hipotesisFive(indicator);
   const H06 = hipotesisSix(indicator);
 
-  const result = Math.max(H01, H02, H03, H04, H05, H06);
-
-  return result;
+  const final = Math.max(H01, H02, H03, H04, H05, H06);
+  if (H01 === final) {
+    return {
+      talent: 'Bakat Akademik Khusus',
+      code: 'H01',
+      prob: final,
+    };
+  }
+  if (H02 === final) {
+    return {
+      talent: 'Bakat Kreatif Produktif',
+      code: 'H02',
+      prob: final,
+    };
+  }
+  if (H03 === final) {
+    return {
+      talent: 'Bakat Seni',
+      code: 'H03',
+      prob: final,
+    };
+  }
+  if (H04 === final) {
+    return {
+      talent: 'Bakat Kinestetik/Psikomotorik',
+      code: 'H04',
+      prob: final,
+    };
+  }
+  if (H05 === final) {
+    return {
+      talent: 'Bakat Sosial',
+      code: 'H05',
+      prob: final,
+    };
+  }
+  if (H06 === final) {
+    return {
+      talent: 'Bakat Kepemimpinan',
+      code: 'H06',
+      prob: final,
+    };
+  }
+  return {
+    talent: 'Anak anda tidak berbakat',
+    code: 'H00',
+    prob: final,
+  };
 };
 
 const result = CertaintyFactor(sample);
-
-console.log('Hasil Identifikasi: ', result);
 
 module.exports = { result, CertaintyFactor };
