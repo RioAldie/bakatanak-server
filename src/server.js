@@ -3,6 +3,8 @@ const router = require('./routes');
 const database = require('./config/database');
 const app = express();
 const port = 9000;
+var cors = require('cors');
+app.use(cors());
 
 app.use(express.json());
 app.use(router);
