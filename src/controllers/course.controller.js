@@ -47,4 +47,24 @@ const deleteCourse = async (req, res) => {
   }
 };
 
-module.exports = { getAllCourse, postNewCourse, deleteCourse };
+const getCourseByTalent = async (req, res) => {
+  try {
+    const course = await Course.find({
+      category: req.params.category,
+    });
+
+    if (course.length <= 0) {
+      return res.status(400).json({ message: 'course not found' });
+    }
+    return res.status(200).json({ message: 'success', data: course });
+  } catch (error) {
+    res.status(500).json({ message: 'error' });
+  }
+};
+
+module.exports = {
+  getAllCourse,
+  postNewCourse,
+  deleteCourse,
+  getCourseByTalent,
+};
