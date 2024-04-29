@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const consultSchema = new Schema({
-  result: {
-    type: Object,
+  prob: {
+    type: Number,
   },
   name: {
     type: String,
@@ -29,6 +29,12 @@ const consultSchema = new Schema({
     type: mongoose.ObjectId,
     required: true,
     ref: 'User',
+  },
+  talent: {
+    type: String,
+  },
+  code: {
+    type: String,
   },
 });
 
