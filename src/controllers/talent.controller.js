@@ -15,18 +15,20 @@ const getTalentIdentification = async (req, res) => {
 
 const saveConsultResult = async (req, res) => {
   try {
-    const { result, name, age, school, city, userId } = req.body;
+    const { name, age, school, city, talent, prob, userId } =
+      req.body;
 
     const date = new Date();
     let now = date.toLocaleDateString('fr-CA');
 
     const newResult = await Consult({
       date: now,
-      result,
       name,
       age,
       school,
       city,
+      prob,
+      talent,
       userId,
     });
 
