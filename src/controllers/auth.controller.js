@@ -66,6 +66,7 @@ const signin = async (req, res) => {
       username: user.username,
       token: tokenCreated,
       email: user.email,
+      userId: user._id,
     };
 
     return res.status(200).json({ message: 'success', data });
