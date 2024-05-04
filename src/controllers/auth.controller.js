@@ -45,7 +45,7 @@ const signin = async (req, res) => {
     // if user doesnt exist
 
     if (user === null) {
-      return res.status(200).json({ message: 'user doesnt exist' });
+      return res.status(402).json({ message: 'user doesnt exist' });
     }
     const token = {
       _id: user._id,
@@ -114,7 +114,7 @@ const signinAdmin = async (req, res) => {
     // if user doesnt exist
 
     if (admin === null) {
-      return res.status(200).json({ message: 'user doesnt exist' });
+      return res.status(402).json({ message: 'email doesnt exist' });
     }
     const token = {
       _id: admin._id,
