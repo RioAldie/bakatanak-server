@@ -51,9 +51,38 @@ const deleteConsultationResult = async (req, res) => {
     res.status(500).json({ message: 'error' });
   }
 };
+const getResultByUserId = async (req, res) => {
+  try {
+    const { userId } = req.body;
 
+    const result = await Consult.find({ userId: userId });
+    if (!result) {
+      return res
+        .status(301)
+        .json({ message: 'Dtata kosong', data: result });
+    }
+    return res.status(200).json({ data: result });
+  } catch (error) {
+    return res.status(500).json({ message: 'error' });
+  }
+};
+const getResultById = async (req, res) => {
+  try {
+    const result = await Consult.findOne({
+      _id: req.params.id,
+    });
+    if (!result) {
+      return res.status(401).json({ message: 'Data kosong' });
+    }
+    return res.status(200).json({ data: result });
+  } catch (error) {
+    return res.status(500).json({ message: 'error' });
+  }
+};
 module.exports = {
   getTalentIdentification,
   saveConsultResult,
   deleteConsultationResult,
+  getResultByUserId,
+  getResultById,
 };
