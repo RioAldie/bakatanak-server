@@ -36,6 +36,9 @@ const consultSchema = new Schema({
   code: {
     type: String,
   },
+  allResult: {
+    type: Object,
+  },
 });
 
 const consultModel = mongoose.model('Consult', consultSchema);
