@@ -1,11 +1,11 @@
-const { CertaintyFactor } = require('../service/cf');
+const { CertaintyFactor } = require('../service/cf.js');
 const Consult = require('../models/consult');
 
 const getTalentIdentification = async (req, res) => {
   try {
     const userIndicatorValue = req.body.indicator;
 
-    const result = CertaintyFactor(userIndicatorValue);
+    const result = await CertaintyFactor(userIndicatorValue);
 
     res.status(200).json({ message: 'success', data: result });
   } catch (error) {
